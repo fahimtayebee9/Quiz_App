@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Quiz App " />
+    <meta name="author" content="Md. Fahim Tayebee" />
+    <meta name="keywords" content="Agency, Template, eCommerce, business" />
+    <meta name="robots" content="all" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta property="og:image" content="assets/img/screenshot.png" />
+    <meta property="og:description" content="" />
+    <meta property="og:url" content="http://www.fahimtayebee.com" />
+    <meta property="og:title" content="SaveCo" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="assets/lib/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/media.css"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Script Area -->
+    <script src="assets/js/jquery-3.5.1.js"></script>
+    <!-- <script src="assets/lib/bootstrap-4.6.0-dist/js/popper.min.js"></script> -->
+    <script src="assets/lib/bootstrap-4.6.0-dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/smooth-scroll-jump.js"></script>
+    <script src="assets/js/modules/Questions.json"></script>
+
+    <title>Quiz Web-App</title>
+</head>
+
+<body>
+    <section class="main">
+        <div class="container">
+            <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
+                <div class="col-10 col-sm-11 col-md-12 col-lg-12">
+                    <!-- TIMER PROGRESS -->
+                    <div class="row">
+                        <div class="col-md-6 m-auto">
+                            <div class="timer">
+                                <div class="timer-tt">
+                                    <p class="t-title">Time Left </p>
+                                    <p id="time"> 
+                                        <span id="hr">00</span> :
+                                        <span id="min">00</span> :
+                                        <span id="sc">00</span>
+                                    </p>
+                                </div>
+                                <div class="time-progress">
+                                    <div id="t-progress"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-head">
+                            <div class="head-con">
+                                <h1>Quiz Web-App</h1>
+
+                                <!-- QUESTION PROGRESS -->
+                                <div class="question-progress d-block">
+                                    <ul class="d-flex list-unstyled">
+                                        <li>
+                                            <a href="" class="q-no q-border success" data-order="0">
+                                                <i class="fas fa-check-circle"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href=""  class="q-no q-border danger" data-order="0">
+                                                <i class="fas fa-times-circle"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href=""  class="q-no q-border" data-order="0">
+                                                <i class="far fa-circle"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href=""  class="q-no q-border" data-order="0">
+                                                <i class="far fa-circle"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href=""  class="q-no q-border" data-order="0">
+                                                <i class="far fa-circle"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href=""  class="q-no q-border" data-order="0">
+                                                <i class="far fa-circle"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href=""  class="q-no q-border" data-order="0">
+                                                <i class="far fa-circle"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href=""  class="q-no q-border" data-order="0">
+                                                <i class="far fa-circle"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href=""  class="q-no q-border" data-order="0">
+                                                <i class="far fa-circle"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href=""  class="q-no q-border" data-order="0">
+                                                <i class="far fa-circle"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- QUIZ AREA -->
+                        <div class="quiz-area">
+                            <div class="row">
+                                <div class="col-md-10 m-auto quiz">
+                                    <div class="question">
+                                        <h4 id="question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, atque.</h4>
+                                    </div>
+
+                                    <div class="code" style="display: none;">
+                                        <p class="code-text">Lorem ipsum dolor sit amet.</p>
+                                    </div>
+
+                                    <div class="row answers">
+                                        <div class="col-md-6">
+                                            <label for="choice">
+                                                <input type="radio" class="option-input radio" name="choice" id="choice_1" />
+                                                Choice 1
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="choice">
+                                                <input type="radio" class="option-input radio" name="choice" id="choice_2" />
+                                                Choice 1
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="choice">
+                                                <input type="radio" class="option-input radio" name="choice" />
+                                                Choice 1
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="choice">
+                                                <input type="radio" class="option-input radio" name="choice" />
+                                                Choice 1
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row btn-area">
+                                        <div class="col-md-6 m-auto">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <button class="btn-read btn-reset d-inline-flex justify-content-between align-items-center w-100">
+                                                        Reset <i class="fas fa-sync-alt"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <button class="btn-read btn-next d-inline-flex justify-content-between align-items-center w-100">
+                                                        Next<i class="fas fa-arrow-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/modules/app.js" type="module"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

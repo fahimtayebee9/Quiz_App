@@ -7,7 +7,7 @@ export default function Quiz(questions){
 }
 
 Quiz.prototype.getCurrentQuestion = function(){
-    return this.questions;
+    return this.questions[this.currentIndex];
 }
 
 Quiz.prototype.addQuestion = function(question){
@@ -15,7 +15,7 @@ Quiz.prototype.addQuestion = function(question){
 }
 
 Quiz.prototype.nextIndex = function(){
-    this.currentIndex++;
+    return this.currentIndex++;
 }
 
 Quiz.prototype.hasEnded = function(){

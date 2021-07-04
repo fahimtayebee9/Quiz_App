@@ -3,26 +3,6 @@ import Quiz from './Quiz.js';
 
 // import getJson from './function.js';
 
-
-let q = null;
-let questionsArray = new Array();
-
-
-$.getJSON('assets/js/modules/Questions.json', function (data) {
-    $.each(data, function (key, model) {
-        if (model.key == "code") {
-            q = new Question(model.id, model.question, model.code, model.answers, model.correct, model.checked);
-        }
-        else{
-            q = new Question(model.id, model.question, null, model.answers, model.correct, model.checked);
-        }
-        questionsArray.push(Object.values(q));
-        
-    });
-});
-
-
-
 const App = (() => {
 
     // GETTING REQUIRED ELEMENTS
@@ -41,6 +21,20 @@ const App = (() => {
     const innerProgress = document.querySelector('#t-progress');
 
     // SET QUIZ QUESTIONS
+    let q = null;
+    let questionsArray = new Array();
+
+    $.getJSON('assets/js/modules/Questions.json', function (data) {
+        $.each(data, function (key, model) {
+            if (key == "code") {
+                q = new Question(model.id, model.question, model.code, model.answers, model.correct, model.checked);
+            }
+            else{
+                q = new Question(model.id, model.question, null, model.answers, model.correct, model.checked);
+            }
+            questionsArray.push(Object.values(q));
+        });
+    });
     const quiz = new Quiz(questionsArray);
     
     const renderQuestion = () => {
@@ -49,6 +43,8 @@ const App = (() => {
     }
 
     renderQuestion();
+
+    console.log(quiz.questions);
 
     const renderAll = () => {
         if(quiz.hasEnded()){

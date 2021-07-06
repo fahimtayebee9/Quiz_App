@@ -218,7 +218,7 @@ body {
 }
 
 .btn-area{
-    margin: 25px 0px;
+    margin-top: 25px;
 }
 .btn-read{
     text-decoration: none;
@@ -303,6 +303,7 @@ body {
 
 .quiz-area{
     padding: 50px 0px;
+    padding-bottom: 20px;
 }
 .quiz-area .question{
     padding: 25px 45px;
@@ -316,13 +317,12 @@ body {
     font-weight: 700;
 }
 .quiz-area .answers{
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
-.timer{
+.timer_body{
     padding: 10px 15px;
     background: white;
-    margin-bottom: 25px;
     width: 100%;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -333,6 +333,21 @@ body {
     justify-content: space-between;
     text-align: center;
     box-shadow: 0 0 0px 8px rgb(227 255 224 / 35%);
+    margin-bottom: 25px!important;
+}
+.timer_body .btn-read{
+    line-height: 0;
+}
+.timer_body .btn-read i{
+    margin: 0;
+}
+.timer{
+    padding: 10px 15px;
+    background: white;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
 }
 .timer p{
     margin: 0;
@@ -349,7 +364,7 @@ body {
     margin: auto;
 }
 #t-progress{
-    width: 80%;
+    width: 100%;
     margin: 0!important;
     background-image: linear-gradient( 102.1deg,  rgba(96,221,142,1) 8.7%, rgba(24,138,141,1) 88.1% );
     height: 20px;

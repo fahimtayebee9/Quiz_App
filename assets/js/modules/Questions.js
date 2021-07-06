@@ -1,13 +1,13 @@
-[ 
+const questions = [ 
     {
         "id" : 1,
         "question": "Inside which HTML element do we put the JavaScript?",
         "code" : null,
         "answers": {
-            "a": "<script>",
-            "b": "<scripting>",
-            "c": "<js>",
-            "d": "<javaScript>"
+            "a": "script",
+            "b": "scripting",
+            "c": "js",
+            "d": "javaScript"
         },
         "correct": "a",
         "checked" : false
@@ -38,7 +38,7 @@
     {
         "id" : 4,
         "question": "What is alerted from the following code?",
-        "code": "var aBoolean = 'true';<br>alert((aBoolean == 'false' ? 'A' : 'B'));",
+        "code": "var aBoolean = 'true';\nalert((aBoolean == 'false' ? 'A' : 'B'));",
         "answers": {
             "a": "The code throws an error",
             "b": "A",
@@ -125,4 +125,6 @@
         "correct": "b",
         "checked" : false
     }
-]
+];
+
+export default questions;

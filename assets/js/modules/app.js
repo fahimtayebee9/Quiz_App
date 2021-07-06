@@ -144,7 +144,7 @@ export default function App () {
         let markUp = '';
         $.each(quiz.getChoices(), function(k, v) {
             markUp += `
-                <div class="col-md-6 sm-320">
+                <div class="col-8 col-sm-10 col-md-6 sm-320 m-auto">
                     <label for="choice">
                         <input type="radio" class="option-input radio" name="choice" id="${quiz.getCurrentQuestion().correct}" data-order="${k}"/>
                         ${v}

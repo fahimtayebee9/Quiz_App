@@ -686,6 +686,7 @@ body {
         width: 30px;
         font-size: 16px;
         line-height: 20;
+        opacity: 0;
     }
     
     .code{
@@ -813,6 +814,7 @@ body {
         width: 30px;
         font-size: 16px;
         line-height: 20;
+        opacity: 0;
     }
     
     .code{
@@ -931,6 +933,7 @@ body {
         height: 30px;
         width: 30px;
         font-size: 16px;
+        opacity: 0;
         line-height: 20;
     }
     
@@ -1049,6 +1052,7 @@ body {
     .option-input:checked::before {
         height: 30px;
         width: 30px;
+        opacity: 0;
         font-size: 16px;
         line-height: 20;
     }
@@ -1167,6 +1171,7 @@ body {
     }
     .option-input:checked::before {
         height: 30px;
+        opacity: 0;
         width: 30px;
         font-size: 16px;
         line-height: 20;
@@ -1285,6 +1290,7 @@ body {
         width: 30px;
     }
     .option-input:checked::before {
+        opacity: 0;
         height: 30px;
         width: 30px;
         font-size: 16px;
@@ -1406,6 +1412,7 @@ body {
     .option-input:checked::before {
         height: 30px;
         width: 30px;
+        opacity: 0;
         font-size: 16px;
         line-height: 20;
     }

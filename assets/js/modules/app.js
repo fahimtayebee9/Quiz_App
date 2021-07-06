@@ -3,9 +3,8 @@ import Quiz from './Quiz.js';
 import questions from './Questions.js';
 import Element from './modules.js';
 import Result from './Result.js';
-// import getJson from './function.js';
 
-const App = (() => {
+export default function App () {
 
     // GETTING REQUIRED ELEMENTS
     const element   = new Element();
@@ -27,6 +26,7 @@ const App = (() => {
         elem.innerHTML = value;
     }
 
+    // RENDER RESULT DIALOG
     const renderResultDialog = () => {
         Swal.fire({
             title: 'Congratulations',
@@ -47,6 +47,7 @@ const App = (() => {
         });
     }
 
+    // RENDER RESULT ON QUESTION PROGRESS BAR
     const renderResult = (result, i) => {
         resultObj.store(result);
         console.log(resultObj.previousResult);
@@ -58,6 +59,7 @@ const App = (() => {
         }
     }  
 
+    // RENDER QUESTION PROGRESS
     const renderQuestionProgress = () => {
         let markUp = '';
         let serial = 0;
@@ -214,6 +216,7 @@ const App = (() => {
 
                 //RENDER TIME
                 renderTime();
+                renderTime(quiz.timeleft,quiz.time)
             },5000);
         });
     }
@@ -229,25 +232,13 @@ const App = (() => {
         if(progressBarWidth > 0 && timeleft > 0 && timetotal != 0){
             renderProgress(progressBarWidth);
             setTimeout(function() {
-                quiz.timeleft -= 1;
+                // quiz.timeleft -= 1;
                 renderTime(timeleft - 1, timetotal);
             }, 1000);
         }
         else{
-            disableAll();
-            Swal.fire({
-                title: 'Congratulations',
-                text: "Quiz Has Ended. Your Score is " + quiz.score,
-                icon: 'sccuess',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Retake Quiz'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.reload();
-                }
-            });
+            // disableAll();
+            renderResultDialog();
         }
         var date = new Date(null);
         date.setSeconds(timeleft);
@@ -261,23 +252,11 @@ const App = (() => {
         renderTime(0,0);
     }
 
+    // RENDER ALL
     const renderAll = () => {
         if(quiz.hasEndedRandom()){
             stopTimer();
-            Swal.fire({
-                title: 'Congratulations',
-                text: "Quiz Has Ended. Your Score is " + quiz.score,
-                icon: 'success',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Retake Quiz'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.reload();
-                }
-            });
-            
+            renderResultDialog();
         }
         else{
             // Render Question
@@ -288,6 +267,7 @@ const App = (() => {
 
             // Render Answer Choice
             renderChoices();
+            // renderTime(quiz.timeleft,quiz.time)
 
         }
     };
@@ -298,9 +278,4 @@ const App = (() => {
         btnListeners    : btnListeners(),
         renderTime      : renderTime(quiz.timeleft,quiz.time)
     };
-
-})();
-
-App.resetAll;
-App.renderAll;
-App.btnListeners;
+};

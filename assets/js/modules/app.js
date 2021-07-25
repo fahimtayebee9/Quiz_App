@@ -50,9 +50,9 @@ export default function App () {
         element.confetti.classList.add('active');
 
         Swal.fire({
-            title: 'Congratulations',
+            title: (quiz.score >= 6) ? 'Congratulations...!!!' : 'OPPS...!!!',
             text: "Quiz Has Ended. Your Score is " + quiz.score,
-            icon: (quiz.score >= 7) ? 'success' : 'warning',
+            icon: (quiz.score >= 6) ? 'success' : 'warning',
             showCancelButton: false,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',

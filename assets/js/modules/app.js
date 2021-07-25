@@ -3,6 +3,7 @@ import Quiz from './Quiz.js';
 import questions from './Questions.js';
 import Element from './modules.js';
 import Result from './Result.js';
+import ConfettiGenerator from "./../confetti.js";
 
 export default function App () {
 
@@ -20,6 +21,7 @@ export default function App () {
     });
     const quiz =  new Quiz(questionsArray);
     element.innerProgress.style.width = "100%";
+    element.confetti.classList.remove('active');
 
     // ELEMENT DATA
     const setValue = (elem, value) => {
@@ -28,11 +30,30 @@ export default function App () {
 
     // RENDER RESULT DIALOG
     const renderResultDialog = () => {
+        element.mainDiv.style.display = "none";
+
+        var confettiElement = element.confetti;
+        var confettiSettings = { 
+            target: confettiElement, 
+            props: ['circle', 'square', 'triangle', 'line'], 
+            max: 300, 
+            colors: [
+                        [255, 167, 43],
+                        [0, 255, 132],
+                        [255, 0, 89],
+                        [255, 213, 0]
+                    ] 
+        };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+
+        element.confetti.classList.add('active');
+
         Swal.fire({
             title: 'Congratulations',
             text: "Quiz Has Ended. Your Score is " + quiz.score,
-            icon: 'success',
-            showCancelButton: true,
+            icon: (quiz.score >= 7) ? 'success' : 'warning',
+            showCancelButton: false,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Retake Quiz'
@@ -45,6 +66,7 @@ export default function App () {
                 return false;
             }
         });
+        
     }
 
     // RENDER RESULT ON QUESTION PROGRESS BAR

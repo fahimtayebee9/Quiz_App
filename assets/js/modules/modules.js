@@ -1,4 +1,6 @@
 export default function Element(){
+    this.mainDiv           = document.querySelector('.main');
+    this.confetti          = document.querySelector('#confetti');
     this.quizDiv           = document.querySelector('.quiz');
     this.question          = document.querySelector('#question');
     this.questionProgress  = document.querySelector('.question-progress-ul');

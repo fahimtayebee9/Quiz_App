@@ -6,8 +6,8 @@ export default function Quiz(questions){
     this.score = 0;
     this.currentIndex = 0;
     this.currentQuestion = null;
-    this.time = 60;
-    this.timeleft = 60;
+    this.time = 300;
+    this.timeleft = 300;
     this.checkedQuestions = [];
 }
 
@@ -65,8 +65,8 @@ Quiz.prototype.reset = function(){
     this.score = 0;
     this.currentIndex = 0;
     this.currentQuestion = null;
-    this.time = 60;
-    this.timeleft = 60;
+    this.time = 300;
+    this.timeleft = 300;
     this.questions.forEach(function(temp){
         temp.checked = false;
     });
